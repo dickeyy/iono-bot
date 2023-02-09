@@ -126,6 +126,6 @@ exports.battleCmd = async function battleCmd(user,guild,interaction,opponent,roo
     }, oneMinCooldown);
 
 
-    cmdRun(user,guild,interaction,cmdName)
+    cmdRun(user,cmdName,guild,interaction)
 
 }

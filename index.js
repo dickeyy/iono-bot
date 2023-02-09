@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits  } = require('discord.js');
+const { Client, GatewayIntentBits, WebhookClient  } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildModeration, GatewayIntentBits.GuildScheduledEvents ] });
 const { REST } = require('@discordjs/rest');
 const { Routes, InteractionResponseType } = require('discord-api-types/v9');
@@ -11,11 +11,15 @@ process.on('uncaughtException', async function (error) {
     log('error', error.stack)
 });
 
-// Export Client
-module.exports = { client };
-
 // init dotenv
 dotenv.config();
+
+// register webhook client
+const consoleWebhookClient = new WebhookClient({ url: process.env.WEBHOOK_URI });
+
+// Export Client
+exports.client = client;
+exports.consoleWebhookClient = consoleWebhookClient;
 
 // Import commands
 const commands = require('./commands').commands
