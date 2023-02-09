@@ -1,0 +1,20 @@
+{
+  "name": "iono-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.5.0",
+    "discord-api-types": "^0.37.31",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "mongodb": "^5.0.1",
+    "winston": "^3.8.2"
+  }
+}
