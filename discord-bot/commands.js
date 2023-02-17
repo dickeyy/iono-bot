@@ -10,6 +10,11 @@ const MODERATE_PERM = 0x0000010000000000
 const commands = [
 
     {
+        name: 'help',
+        description: 'Get help with commands',
+    },
+
+    {
         name: 'battle',
         description: 'Challenge a user to a battle',
         options: [
@@ -26,7 +31,45 @@ const commands = [
                 required: true,
             },
         ],
-    }
+    },
+
+    // {
+    //     name: 'raid',
+    //     description: 'All the tera raid commands',
+    //     options: [
+    //         {
+    //             name: 'invite',
+    //             description: 'Invite users to a raid',
+    //             type: ApplicationCommandOptionType.Subcommand,
+    //             options: [
+    //                 {
+    //                     name: 'room_code',
+    //                     description: 'The room code for the raid',
+    //                     type: ApplicationCommandOptionType.String,
+    //                     required: true,
+    //                 },
+    //                 {
+    //                     name: 'opponent1',
+    //                     description: 'Who you would like to invite',
+    //                     type: ApplicationCommandOptionType.User,
+    //                     required: true,
+    //                 },
+    //                 {
+    //                     name: 'opponent2',
+    //                     description: 'Who you would like to invite',
+    //                     type: ApplicationCommandOptionType.User,
+    //                     required: false,
+    //                 },
+    //                 {
+    //                     name: 'opponent3',
+    //                     description: 'Who you would like to invite',
+    //                     type: ApplicationCommandOptionType.User,
+    //                     required: false,
+    //                 },
+    //             ]
+    //         }
+    //     ]
+    // }
 
 ]
 

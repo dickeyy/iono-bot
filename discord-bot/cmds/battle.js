@@ -32,7 +32,7 @@ exports.battleCmd = async function battleCmd(user,guild,interaction,opponent,roo
     if (room.length > 6) return interaction.reply({ content: 'The room number must be 6 digits or less', ephemeral: true }, true)
 
     let embed = new EmbedBuilder()
-    .setTitle(`You have been challenged by ${user.username}!`)
+    .setTitle(`${user.username} has been challenged by ${user.username}!`)
     .setFooter({ text: 'You have 2 minutes to respond' })
     .setTimestamp()
     .setColor("Gold")
@@ -72,7 +72,7 @@ exports.battleCmd = async function battleCmd(user,guild,interaction,opponent,roo
             .setTimestamp()
             .setColor("Purple")
         
-            i.update({
+            await i.update({
                 embeds: [embed],
                 components: [],
                 content: null
@@ -82,9 +82,10 @@ exports.battleCmd = async function battleCmd(user,guild,interaction,opponent,roo
             .setTitle(`Battle Accepted!`)
             .setDescription('Room Code: \`' + room + '\`')
             .setTimestamp()
-            
-            client.users.send(opponent.id, {
+
+            await i.followUp({
                 embeds: [embed2],
+                ephemeral: true
             })
 
         } else if (buttonId == `decline-${user.id}-${opponent.id}-${room}`) {
